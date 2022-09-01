@@ -1,0 +1,3 @@
+<view class="tabbar">
+  <view class="active" wx:for="{{tabArr}}" >{{item}}</view>
+</view>
