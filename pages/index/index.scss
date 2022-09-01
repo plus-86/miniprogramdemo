@@ -1,24 +1,23 @@
-.bubble-box {
-  
-  // display: flex;
-  // justify-content: center;
-  // flex-wrap: wrap;
-  // align-items: center;
-  .bubble {
-    position: absolute;
-    margin: 0 10rpx;
-    background: linear-gradient(300deg,#a34faf,#cfa7e4);
+.bubble {
+  position: absolute;
+  margin: 0 10rpx;
+  background: linear-gradient(300deg, #a34faf, #cfa7e4);
+  border-radius: 50%;
+  box-shadow: 0px 1px 5px #000;
+  animation: bubble 5s infinite;
+  opacity: 0.9;
+
+  .inside {
+    filter: blur(10rpx);
+    border-top: 15rpx solid #fff;
     border-radius: 50%;
-    box-shadow: 0px 1px 5px #000;
-    animation: bubble 5s infinite;
-    opacity: 0.9;
-    .inside{
-      filter: blur(10rpx);
-      border-top: 15rpx solid #fff;
-      border-radius: 50%;
-    }
+  }
+  .title{
+    font-size: 22rpx;
+    text-align: center;
   }
 }
+
 
 @keyframes bubble {
 

@@ -1,5 +1,6 @@
 <view class="bubble-box">
   <view style="height:{{item.size}};width:{{item.size}};top:{{item.top}};left:{{item.left}}" wx:for="{{bubble}}" wx:key="index" class="bubble">
     <view style="height:{{item.size}};width:{{item.size}};" class="inside"></view>
+    <view class="title">{{item.title}}</view>
   </view>
 </view>
