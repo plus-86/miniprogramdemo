@@ -1,6 +1,11 @@
 <view class="bubble-box">
-  <view style="height:{{item.size}};width:{{item.size}};top:{{item.top}};left:{{item.left}}" wx:for="{{bubble}}" wx:key="index" class="bubble">
-    <view style="height:{{item.size}};width:{{item.size}};" class="inside"></view>
-    <view class="title">{{item.title}}</view>
+  <view wx:if="{{item.isshow}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="showCover" style="height:{{item.size}}px;width:{{item.size}}px;top:{{item.top}}px;left:{{item.left}}px" wx:for="{{bubble}}" wx:key="index" class="bubble">
+
+      <view style="height:{{item.size}}px;width:{{item.size}}px;" class="inside"></view>
+      <view class="title">{{item.title}}</view>
+
   </view>
 </view>
+<view bindtap="removeCover" wx:if="{{showMask}}" class="mask">
+  <view class="text">{{maskTitle}}</view>
+</view> 

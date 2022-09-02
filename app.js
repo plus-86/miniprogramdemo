@@ -1,6 +1,5 @@
 // app.js
 import './utils/lodash-fix'
-
 App({
   onLaunch() {
     // 展示本地存储能力

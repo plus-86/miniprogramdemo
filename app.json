@@ -3,21 +3,11 @@
     "pages/index/index",
     "pages/calendar/calendar"
   ],
-  "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "气泡"
-    }, {
-      "pagePath": "pages/calendar/calendar",
-      "text": "日历"
-    }]
-  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
