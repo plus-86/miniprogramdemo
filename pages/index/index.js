@@ -94,7 +94,7 @@ Page({
       bubble
     })
   },
-  
+  // 判断两个球之间是否重叠
   isAvailable(newX, NewY, oldX, oldY) {
     let isAvailable = false
     let n1 = newX - oldX
