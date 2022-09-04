@@ -18,8 +18,7 @@ Page({
     })
   },
   showCover(e){
-    let title = e.currentTarget.dataset.title
-    let index = e.currentTarget.dataset.index
+    let { title , index } = e.currentTarget.dataset
     let newBubble = this.data.bubble
     newBubble[index]['isshow'] = false
     this.setData({
@@ -29,6 +28,7 @@ Page({
     })
   },
   randomBubble() {
+    // 请求的数据
     let bubble = [{
       title: '喝8杯水',
       isshow: true
@@ -59,14 +59,15 @@ Page({
     // 创建随机大小，且不同尺寸的圆
     while (size.length < 5) {
       size.push(`${random(50,100)}`)
-      size = uniq(size)
+      // 每次遍历都判断气泡尺寸是唯一的
+      size = uniq(size) // 若不是唯一的则拿掉重复项并返回数组，并赋值给size
     }
-    // 给第一个圆定位
+    // 给第一个圆定位，减100是为了保证圆在屏幕内
     left.push(`${Math.abs(random(0,windowWidth) - 100)}`)
     top.push(`${Math.abs(random(0,windowHeight) - 100)}`)
-
+    // 这里判断top或者left的长度都行
     while (top.length < 5) {
-      // 新的圆位置
+      // 依次创建新的圆位置
       let newx = `${Math.abs(random(0, windowWidth) - 100)}`
       let newy = `${Math.abs(random(0, windowHeight) - 100)}`
 
@@ -75,7 +76,7 @@ Page({
       for (let i in top) {
         let oldx = left[i]
         let oldy = top[i]
-        isAvailableArr.push(this.isAvailable(newx, newy, oldx, oldy))
+        isAvailableArr.push(this.isAvailable(newx, newy, oldx, oldy)) 
       }
       // 没有重叠则推入数组
       if (isAvailableArr.every(item => item == true)) {
@@ -93,6 +94,7 @@ Page({
       bubble
     })
   },
+  
   isAvailable(newX, NewY, oldX, oldY) {
     let isAvailable = false
     let n1 = newX - oldX
